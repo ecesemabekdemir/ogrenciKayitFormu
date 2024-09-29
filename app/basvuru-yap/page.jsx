@@ -10,7 +10,7 @@ export default function Basvuru() {
 
   return (
     <>
-      <h1>Başvuru Sayfası</h1>
+      <h1>Başvuru Sayfası aaa</h1>
       <form
         action={async (formData) => {
           console.log(formData);
