@@ -1,11 +1,9 @@
-import FirstPage from "./components/firstpage/page";
-import SecondPage from "./components/secondpage/page";
+import Basvuru from "./basvuru-yap/page";
 
 export default function Home() {
   return (
     <>
-      <FirstPage />
-      <SecondPage />
+      <Basvuru />
     </>
   );
 }
