@@ -1,26 +1,35 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useformState, useState } from "react";
 import { BasvuruYapAksiyonu } from "@/action/basvuru";
 import { useFormState } from "react-dom";
 
 export default function Basvuru() {
   const [formState, formAction] = useFormState(BasvuruYapAksiyonu, null);
+  const [errorsState, setErrorsState] = useState({});
   const [step, setStep] = useState(1);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData(e.target);
-    const formObj = Object.fromEntries(formData);
-    const response = await formAction(formObj);
-    console.log(response);
-
-    setStep((prev) => prev + 1);
-  };
 
   return (
     <>
       <h1>Başvuru Sayfası</h1>
-      <form onSubmit={handleSubmit}>
+      <form
+        action={async (formData) => {
+          console.log(formData);
+          const formObj = Object.fromEntries(formData);
+          console.log(formObj);
+
+          const response = await BasvuruYapAksiyonu(formObj);
+          console.log(response);
+
+          if (response?.errors) {
+            setErrorsState({
+              errors: response?.errors,
+            });
+            return;
+          }
+
+          setStep((prev) => prev + 1);
+        }}
+      >
         <input type="hidden" name="step" value={step} />
         {step === 1 && (
           <>
@@ -29,9 +38,9 @@ export default function Basvuru() {
                 <input type="text" name="name" id="name" placeholder="adınız" />
               </label>{" "}
               <br />
-              {formState?.errors?.name && (
+              {errorsState?.errors?.name && (
                 <small className="text-red-500">
-                  {formState?.errors?.name}
+                  {errorsState?.errors?.name}
                 </small>
               )}
             </p>
@@ -44,9 +53,9 @@ export default function Basvuru() {
                   placeholder="soyadınız"
                 />
               </label>
-              {formState?.errors?.surname && (
+              {errorsState?.errors?.surname && (
                 <small className="text-red-500">
-                  {formState?.errors?.surname}
+                  {errorsState?.errors?.surname}
                 </small>
               )}
             </p>
@@ -59,9 +68,9 @@ export default function Basvuru() {
                   placeholder="telefon numaranız"
                 />
               </label>
-              {formState?.errors?.phone && (
+              {errorsState?.errors?.phone && (
                 <small className="text-red-500">
-                  {formState?.errors?.phone}
+                  {errorsState?.errors?.phone}
                 </small>
               )}
             </p>
@@ -74,9 +83,9 @@ export default function Basvuru() {
                   placeholder="tc numaranız"
                 />
               </label>
-              {formState?.errors?.tcno && (
+              {errorsState?.errors?.tcno && (
                 <small className="text-red-500">
-                  {formState?.errors?.tcno}
+                  {errorsState?.errors?.tcno}
                 </small>
               )}
             </p>
