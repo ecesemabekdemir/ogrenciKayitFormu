@@ -1,8 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import FirstPage from "./components/firstpage/page";
+import SecondPage from "./components/secondpage/page";
 
 export default function Home() {
   return (
-    <h1>Ben doa</h1>
+    <>
+      <FirstPage />
+      <SecondPage />
+    </>
   );
 }
