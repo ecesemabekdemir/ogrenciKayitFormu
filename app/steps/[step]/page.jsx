@@ -1,5 +1,5 @@
-import FirstPage from "@/components/first-page/page";
-import SecondPage from "@/components/second-page/page";
+import FirstPage from "@/components/first-page";
+import SecondPage from "@/components/second-page";
 
 export default function StepPage({ params }) {
   const { step } = params;
@@ -18,7 +18,7 @@ export default function StepPage({ params }) {
           </p>
         </>
       )}
-      {step == 3 && <>ögretmen ögrenci sınıfı numarası</>}
+      {step == 3 && <>ögretmen ögrenci sınıfı numarasiii</>}
       {step == 4 && <>mezuniyet durumu</>}
     </>
   );
