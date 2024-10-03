@@ -1,42 +1,75 @@
-p {
-  margin-bottom: 16px;
-  font-size: 16px;
-  color: black;
+.secondPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-input[type="number"],
-textarea {
+.secondPage p {
+  margin-bottom: 1.5rem;
   width: 100%;
-  padding: 8px;
-  margin-top: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
 }
 
-textarea {
-  height: 80px;
+.secondPage input,
+.secondPage textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
 }
 
-label {
-  margin-right: 16px;
-  font-size: 14px;
+.secondPage input:focus,
+.secondPage textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.secondPage textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.secondPage small {
+  color: #ff4d4f;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.secondPage label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.secondPage button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.secondPage button:hover {
+  background-color: #0056b3;
+}
+
+.secondPage button:focus {
+  outline: none;
 }
 
 input[type="radio"] {
-  margin-right: 8px;
+  margin-right: 0.5rem;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 16px;
-}
-
-button:hover {
-  background-color: #45a049;
+.secondPage label input[type="radio"] {
+  margin-left: 1rem;
 }

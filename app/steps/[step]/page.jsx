@@ -1,8 +1,10 @@
 "use client";
 import { BasvuruYapAksiyonu } from "@/action/basvuru";
+import FifthPage from "@/components/fifth-page";
 import FirstPage from "@/components/first-page";
 import FourthPage from "@/components/fourth-page";
 import SecondPage from "@/components/second-page";
+import SixthPage from "@/components/sixth-page";
 import ThirdPage from "@/components/third-page";
 import { notFound, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -13,7 +15,7 @@ export default function StepPage({ params }) {
   const [errorsState, setErrorsState] = useState({});
 
   useEffect(() => {
-    if(step > 6) {
+    if (step > 6) {
       return notFound();
     }
   }, []);
@@ -34,15 +36,15 @@ export default function StepPage({ params }) {
           return;
         }
 
-        if(step == 2) {
-          if(formObj?.radio == 'hayır') {
-            router.push('/steps/5');
+        if (step == 2) {
+          if (formObj?.radio == "hayır") {
+            router.push("/steps/5");
           } else {
             router.push(`/steps/${Number(step) + 1}`);
           }
         } else if (step == 4) {
-          if(formObj?.sertifika == 'hayır') {
-            router.push('/steps/5');
+          if (formObj?.sertifika == "hayır") {
+            router.push("/steps/5");
           } else {
             router.push(`/steps/6`);
           }
@@ -54,10 +56,11 @@ export default function StepPage({ params }) {
       <>
         {step == 1 && <FirstPage errorsState={errorsState} />}
         {step == 2 && <SecondPage errorsState={errorsState} />}
-        {step == 3 && <ThirdPage errorsState={errorsState}/>}
-        {step == 4 && <FourthPage errorsState={errorsState}/>}
-        {step == 5 && <>Form kaydedildi</>}
-        {step == 6 && <>Öğrenci sertifika almaya hak kazandı</>}
+        {step == 3 && <ThirdPage errorsState={errorsState} />}
+        {step == 4 && <FourthPage errorsState={errorsState} />}
+        {step == 5 && <FifthPage />}
+
+        {step == 6 && <SixthPage />}
       </>
     </form>
   );

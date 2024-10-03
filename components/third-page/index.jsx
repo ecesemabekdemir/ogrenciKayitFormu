@@ -3,7 +3,7 @@ import "./third.css";
 
 export default function ThirdPage({ errorsState }) {
   return (
-    <>
+    <div className="thirdPage">
       <p>
         <label htmlFor="">
           <input
@@ -31,19 +31,12 @@ export default function ThirdPage({ errorsState }) {
         </label>
         <br />
         {errorsState?.errors?.bolum && (
-          <small className="text-red-500">
-            {errorsState?.errors?.bolum}
-          </small>
+          <small className="text-red-500">{errorsState?.errors?.bolum}</small>
         )}
       </p>
       <p>
         <label htmlFor="">
-          <input
-            id="sinif"
-            type="text"
-            name="sinif"
-            placeholder="sınıfı:"
-          />
+          <input id="sinif" type="text" name="sinif" placeholder="sınıfı:" />
         </label>
         <br />
         {errorsState?.errors?.sinif && (
@@ -61,11 +54,13 @@ export default function ThirdPage({ errorsState }) {
         </label>
         <br />
         {errorsState?.errors?.ogrenciNo && (
-          <small className="text-red-500">{errorsState?.errors?.ogrenciNo}</small>
+          <small className="text-red-500">
+            {errorsState?.errors?.ogrenciNo}
+          </small>
         )}
       </p>
-      
+
       <button type="submit">İlerle</button>
-    </>
+    </div>
   );
 }

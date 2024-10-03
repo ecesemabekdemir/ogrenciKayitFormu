@@ -1,0 +1,21 @@
+.fifthPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; 
+  background-color: #e7f3fe; 
+  text-align: center;
+}
+
+.fifthPage h1 {
+  font-size: 2.5rem;
+  color: #2196f3; 
+  margin: 0; 
+}
+
+.fifthPage p {
+  font-size: 1.25rem;
+  color: #555; 
+  margin-top: 1rem;
+}

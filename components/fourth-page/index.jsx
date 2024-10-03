@@ -3,7 +3,7 @@ import "./fourth.css";
 
 export default function FourthPage({ errorsState }) {
   return (
-    <>
+    <div className="fourthPage">
       <p>
         Ödevi Tamamladı mı?
         <label>
@@ -40,7 +40,9 @@ export default function FourthPage({ errorsState }) {
         </label>
         <br />
         {errorsState?.errors?.newProje && (
-          <small className="text-red-500">{errorsState?.errors?.newProje}</small>
+          <small className="text-red-500">
+            {errorsState?.errors?.newProje}
+          </small>
         )}
       </p>
       <p>
@@ -79,11 +81,13 @@ export default function FourthPage({ errorsState }) {
         </label>
         <br />
         {errorsState?.errors?.sertifika && (
-          <small className="text-red-500">{errorsState?.errors?.sertifika}</small>
+          <small className="text-red-500">
+            {errorsState?.errors?.sertifika}
+          </small>
         )}
       </p>
-      
+
       <button type="submit">Kaydet</button>
-    </>
+    </div>
   );
 }

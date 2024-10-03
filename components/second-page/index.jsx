@@ -3,7 +3,7 @@ import "./second.css";
 
 export default function SecondPage({ errorsState }) {
   return (
-    <>
+    <div className="secondPage">
       <p>
         <label htmlFor="">
           <input
@@ -63,6 +63,6 @@ export default function SecondPage({ errorsState }) {
         )}
       </p>
       <button type="submit">İlerle</button>
-    </>
+    </div>
   );
 }
