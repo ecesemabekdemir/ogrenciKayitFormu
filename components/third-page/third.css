@@ -1,42 +1,60 @@
-p {
-  margin-bottom: 16px;
-  font-size: 16px;
-  color: black;
+.thirdPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 0 auto;
 }
 
-input[type="number"],
-textarea {
+.thirdPage p {
+  margin-bottom: 1.5rem;
   width: 100%;
-  padding: 8px;
-  margin-top: 8px;
+}
+
+.thirdPage input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
 }
 
-textarea {
-  height: 80px;
+.thirdPage input:focus {
+  border-color: #007bff;
+  outline: none;
 }
 
-label {
-  margin-right: 16px;
-  font-size: 14px;
+.thirdPage small {
+  color: #ff4d4f;
+  margin-top: 0.25rem;
+  display: block;
 }
 
-input[type="radio"] {
-  margin-right: 8px;
+.thirdPage label {
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
-button {
-  padding: 10px 20px;
-  background-color: #4CAF50;
-  color: white;
+.thirdPage button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #28a745;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #45a049;
+.thirdPage button:hover {
+  background-color: #218838;
+}
+
+.thirdPage button:focus {
+  outline: none;
 }

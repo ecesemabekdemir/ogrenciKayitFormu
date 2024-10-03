@@ -4,7 +4,7 @@ import "./first-page.css";
 
 export default function FirstPage({ errorsState }) {
   return (
-    <>
+    <div className="firstPage">
       <p>
         <label htmlFor="">
           <input type="text" name="name" id="name" placeholder="adınız" />
@@ -78,6 +78,6 @@ export default function FirstPage({ errorsState }) {
         )}
       </p>
       <button type="submit">ilerle</button>
-    </>
+    </div>
   );
 }
