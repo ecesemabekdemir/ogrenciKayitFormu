@@ -2,6 +2,8 @@
 import { useEffect, useformState, useState } from "react";
 import { BasvuruYapAksiyonu } from "@/action/basvuru";
 import { useFormState } from "react-dom";
+import FirstPage from "@/components/first-page/page";
+import SecondPage from "@/components/second-page/page";
 
 export default function Basvuru() {
   const [formState, formAction] = useFormState(BasvuruYapAksiyonu, null);
@@ -10,7 +12,7 @@ export default function Basvuru() {
 
   return (
     <>
-      <h1>Başvuru Sayfası aaa</h1>
+      <h1>Başvuru Sayfası</h1>
       <form
         action={async (formData) => {
           console.log(formData);
@@ -31,79 +33,10 @@ export default function Basvuru() {
         }}
       >
         <input type="hidden" name="step" value={step} />
-        {step === 1 && (
-          <>
-            <p>
-              <label htmlFor="">
-                <input type="text" name="name" id="name" placeholder="adınız" />
-              </label>{" "}
-              <br />
-              {errorsState?.errors?.name && (
-                <small className="text-red-500">
-                  {errorsState?.errors?.name}
-                </small>
-              )}
-            </p>
-            <p>
-              <label htmlFor="">
-                <input
-                  type="text"
-                  name="surname"
-                  id="surname"
-                  placeholder="soyadınız"
-                />
-              </label>
-              {errorsState?.errors?.surname && (
-                <small className="text-red-500">
-                  {errorsState?.errors?.surname}
-                </small>
-              )}
-            </p>
-            <p>
-              <label htmlFor="">
-                <input
-                  type="number"
-                  name="phone"
-                  id="phone"
-                  placeholder="telefon numaranız"
-                />
-              </label>
-              {errorsState?.errors?.phone && (
-                <small className="text-red-500">
-                  {errorsState?.errors?.phone}
-                </small>
-              )}
-            </p>
-            <p>
-              <label htmlFor="">
-                <input
-                  type="number"
-                  name="tcno"
-                  id="tcno"
-                  placeholder="tc numaranız"
-                />
-              </label>
-              {errorsState?.errors?.tcno && (
-                <small className="text-red-500">
-                  {errorsState?.errors?.tcno}
-                </small>
-              )}
-            </p>
-            <p>
-              <label htmlFor="">
-                <input
-                  type="date"
-                  name="dogumTarihi"
-                  id="dogumTarihi"
-                  placeholder="Doğum tarihi"
-                />
-              </label>
-            </p>
-          </>
-        )}
-        {step === 2 && <input type="text" name="test" placeholder="TEST" />}
+        {step === 1 && <FirstPage />}
+        {step == 2 && <SecondPage />}
 
-        <button>{step === 4 ? "Kaydet" : "İlerle"}</button>
+        {/* <button>{step === 4 ? "Kaydet" : "İlerle"}</button> */}
       </form>
     </>
   );
