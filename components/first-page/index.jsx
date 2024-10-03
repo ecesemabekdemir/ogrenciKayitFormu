@@ -8,7 +8,7 @@ export default function FirstPage({ errorsState }) {
       <p>
         <label htmlFor="">
           <input type="text" name="name" id="name" placeholder="adınız" />
-        </label>{" "}
+        </label>
         <br />
         {errorsState?.errors?.name && (
           <small className="text-red-500">{errorsState?.errors?.name}</small>
@@ -63,6 +63,21 @@ export default function FirstPage({ errorsState }) {
           />
         </label>
       </p>
+      <p>
+        <label htmlFor="gender">
+          <select name="gender" id="gender">
+            <option value="">Cinsiyet Seçiniz</option>
+            <option value="Erkek">Erkek</option>
+            <option value="Kadın">Kadın</option>
+            <option value="Diğer">Diğer</option>
+          </select>
+        </label>
+        <br />
+        {errorsState?.errors?.gender && (
+          <small className="text-red-500">{errorsState?.errors?.gender}</small>
+        )}
+      </p>
+      <button type="submit">ilerle</button>
     </>
   );
 }
