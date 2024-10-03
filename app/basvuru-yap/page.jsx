@@ -2,8 +2,8 @@
 import { useEffect, useformState, useState } from "react";
 import { BasvuruYapAksiyonu } from "@/action/basvuru";
 import { useFormState } from "react-dom";
-import FirstPage from "@/components/first-page/page";
-import SecondPage from "@/components/second-page/page";
+import FirstPage from "@/components/first-page";
+import SecondPage from "@/components/second-page";
 
 export default function Basvuru() {
   const [formState, formAction] = useFormState(BasvuruYapAksiyonu, null);
