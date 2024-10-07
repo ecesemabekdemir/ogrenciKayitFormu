@@ -4,36 +4,35 @@ export async function BasvuruYapAksiyonu(formObj, step) {
   let errors = {};
   if (step == 1) {
     errors = {
-      name: !formObj.name && "İsim boş olamaz",
-      surname: !formObj.surname && "Soyad boş olamaz",
-      phone: !formObj.phone && "Telefon alanı boş olamaz",
-      tcno: !formObj.tcno && "TCNO alanı boş olamaz",
+      name: !formObj.name && "*İsim alanı boş bırakılamaz",
+      surname: !formObj.surname && "*Soyad alanı boş bırakılamaz",
+      phone: !formObj.phone && "*Telefon alanı boş bırakılamaz",
+      tcno: !formObj.tcno && "*TCNO girilmesi zorunludur",
     };
   } else if (step == 2) {
     errors = {
-      sinavPuan: !formObj.sinavPuan && "Sınav puanı boş olamaz",
-      mulakatNot: !formObj.mulakatNot && "mulakatNot boş olamaz",
-      puan: !formObj.puan && "puan alanı boş olamaz",
-      radio: !formObj.radio && "radio alanı boş olamaz",
+      sinavPuan: !formObj.sinavPuan && "alan boş bırakılamaz",
+      mulakatNot: !formObj.mulakatNot && "alan boş bırakılamaz",
+      puan: !formObj.puan && "alan boş bırakılamaz",
+      radio: !formObj.radio && "alan boş bırakılamaz",
     };
   } else if (step == 3) {
     errors = {
-      donemEgitmeni: !formObj.donemEgitmeni && "Dönem Eğitmeni boş olamaz",
-      bolum: !formObj.bolum && "Bölüm boş olamaz",
-      sinif: !formObj.sinif && "Sınıf alanı boş olamaz",
-      ogrenciNo: !formObj.ogrenciNo && "Öğrenci numarası alanı boş olamaz",
+      donemEgitmeni: !formObj.donemEgitmeni && "alan boş bırakılamaz",
+      bolum: !formObj.bolum && "alan boş bırakılamaz",
+      sinif: !formObj.sinif && "alan boş bırakılamaz",
+      ogrenciNo: !formObj.ogrenciNo && "Öğrenci numarası girilmesi zorunludur",
     };
   } else if (step == 4) {
     errors = {
-      odev: !formObj.odev && "Ödev boş olamaz",
-      katilim: !formObj.katilim && "Katilim boş olamaz",
-      newProje: !formObj.newProje && "newProje alanı boş olamaz",
-      zaman: !formObj.zaman && "zaman numarası alanı boş olamaz",
-      ders: !formObj.ders && "ders numarası alanı boş olamaz",
-      sertifika: !formObj.sertifika && "sertifika numarası alanı boş olamaz",
+      odev: !formObj.odev && "alan boş bırakılamaz",
+      katilim: !formObj.katilim && "alan boş bırakılamaz",
+      newProje: !formObj.newProje && "alan boş bırakılamaz",
+      zaman: !formObj.zaman && "alan boş bırakılamaz",
+      ders: !formObj.ders && "alan boş bırakılamaz",
+      sertifika: !formObj.sertifika && "alan boş bırakılamaz",
     };
-  } 
-
+  }
 
   for (const key in errors) {
     if (Object.prototype.hasOwnProperty.call(errors, key)) {
