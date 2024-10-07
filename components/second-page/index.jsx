@@ -4,7 +4,7 @@ import "./second.css";
 export default function SecondPage({ errorsState }) {
   return (
     <div className="secondPage">
-      <p>
+      <div className="sinavPuan">
         <label htmlFor="">
           <input
             id="sinavPuan"
@@ -19,8 +19,8 @@ export default function SecondPage({ errorsState }) {
             {errorsState?.errors?.sinavPuan}
           </small>
         )}
-      </p>
-      <p>
+      </div>
+      <div className="not">
         <label htmlFor="">
           <textarea
             id="mulakatNot"
@@ -34,8 +34,8 @@ export default function SecondPage({ errorsState }) {
             {errorsState?.errors?.mulakatNot}
           </small>
         )}
-      </p>
-      <p>
+      </div>
+      <div className="puan">
         <label htmlFor="">
           <input
             id="puan"
@@ -44,24 +44,27 @@ export default function SecondPage({ errorsState }) {
             placeholder="Mülakat Puanı:"
           />
         </label>
-        <br />
+
         {errorsState?.errors?.puan && (
           <small className="text-red-500">{errorsState?.errors?.puan}</small>
         )}
-      </p>
-      <p>
-        Mülakat Geçti mi?
+      </div>
+      <div className="radio">
+        <p>Mülakat Geçti mi?</p>
         <label>
-          <input name="radio" id="radio" type="radio" value="evet" />
-          Evet
-          <input name="radio" id="radio" type="radio" value="hayır" />
-          Hayır
+          <p>
+            <input name="radio" id="radio" type="radio" value="evet" /> Evet{" "}
+          </p>
+          <p>
+            <input name="radio" id="radio" type="radio" value="hayır" />
+            Hayır
+          </p>
         </label>
         <br />
         {errorsState?.errors?.radio && (
           <small className="text-red-500">{errorsState?.errors?.radio}</small>
         )}
-      </p>
+      </div>
       <button type="submit">İlerle</button>
     </div>
   );
