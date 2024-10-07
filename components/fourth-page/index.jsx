@@ -49,9 +49,11 @@ export default function FourthPage({ errorsState }) {
           </p>
         </label>
         {errorsState?.errors?.newProje && (
-          <small className="text-red-500">
-            {errorsState?.errors?.newProje}
-          </small>
+          <p>
+            <small className="text-red-500">
+              {errorsState?.errors?.newProje}
+            </small>
+          </p>
         )}
       </div>
       <div className="box">
@@ -67,7 +69,9 @@ export default function FourthPage({ errorsState }) {
           </p>
         </label>
         {errorsState?.errors?.zaman && (
-          <small className="text-red-500">{errorsState?.errors?.zaman}</small>
+          <p>
+            <small className="text-red-500">{errorsState?.errors?.zaman}</small>
+          </p>
         )}
       </div>
       <div className="box">
@@ -83,7 +87,9 @@ export default function FourthPage({ errorsState }) {
           </p>
         </label>
         {errorsState?.errors?.ders && (
-          <small className="text-red-500">{errorsState?.errors?.ders}</small>
+          <p>
+            <small className="text-red-500">{errorsState?.errors?.ders}</small>
+          </p>
         )}
       </div>
       <div className="box">
@@ -99,13 +105,17 @@ export default function FourthPage({ errorsState }) {
           </p>
         </label>
         {errorsState?.errors?.sertifika && (
-          <small className="text-red-500">
-            {errorsState?.errors?.sertifika}
-          </small>
+          <p>
+            <small className="text-red-500">
+              {errorsState?.errors?.sertifika}
+            </small>
+          </p>
         )}
       </div>
 
-      <button className="saveBtn" type="submit">Kaydet</button>
+      <button className="saveBtn" type="submit">
+        Kaydet
+      </button>
     </div>
   );
 }
