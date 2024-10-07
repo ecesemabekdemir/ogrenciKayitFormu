@@ -1,53 +1,57 @@
 .fourthPage {
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
-  background-color: #f9f9f9;
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 0 auto;
-  margin-block: 50px;
 }
 
-.fourthPage p {
-  margin-bottom: 1.5rem;
-  font-size: 1rem;
-}
-
-.fourthPage label {
-  margin-left: 10px;
-  font-weight: 500;
+.box{
   display: flex;
-  align-items: center;
-  gap: 10px;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.fourthPage input[type="radio"] {
-  margin-right: 0.5rem;
+p {
+  font-weight: bold;
+  font-size: 18px;
 }
 
-.fourthPage small {
-  color: #ff4d4f;
-  margin-top: 0.25rem;
+label p {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+small.text-red-500 {
+  display: flex;
+  flex-wrap: wrap;
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 5px;
   display: block;
 }
 
-.fourthPage button {
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: #fff;
-  background-color: #007bff;
+.saveBtn  {
+  width: 80%;
+  padding: 12px;
+  background-color: #3498db;
+  color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.fourthPage button:hover {
-  background-color: #0056b3;
-}
-
-.fourthPage button:focus {
-  outline: none;
+.saveBtn:hover {
+  background-color: #2980b9;
 }

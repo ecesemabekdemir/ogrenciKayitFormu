@@ -4,90 +4,118 @@ import "./fourth.css";
 export default function FourthPage({ errorsState }) {
   return (
     <div className="fourthPage">
-      <p>
-        Ödevi Tamamladı mı?
+      <div className="box">
+        <p>Ödevi Tamamladı mı?</p>
         <label>
-          <input name="odev" id="odev" type="radio" value="evet" />
-          Evet
-          <input name="odev" id="odev" type="radio" value="hayır" />
-          Hayır
+          <p>
+            <input name="odev" id="odev" type="radio" value="evet" />
+            Evet
+          </p>
+          <p>
+            <input name="odev" id="odev" type="radio" value="hayır" />
+            Hayır
+          </p>
         </label>
-        <br />
         {errorsState?.errors?.odev && (
           <small className="text-red-500">{errorsState?.errors?.odev}</small>
         )}
-      </p>
-      <p>
-        Derse Katılım sağladı mı?
+      </div>
+      <div className="box">
+        <p> Derse Katılım sağladı mı?</p>
         <label>
-          <input name="katilim" id="katilim" type="radio" value="evet" />
-          Evet
-          <input name="katilim" id="katilim" type="radio" value="hayır" />
-          Hayır
+          <p>
+            <input name="katilim" id="katilim" type="radio" value="evet" />
+            Evet
+          </p>
+          <p>
+            <input name="katilim" id="katilim" type="radio" value="hayır" />
+            Hayır
+          </p>
         </label>
-        <br />
         {errorsState?.errors?.katilim && (
           <small className="text-red-500">{errorsState?.errors?.katilim}</small>
         )}
-      </p>
-      <p>
-        Öğrenci eğitimlerine söylemediği halde proje geliştirdi mi ?
+      </div>
+      <div className="box">
+        <p> Öğrenci eğitimlerine söylemediği halde proje geliştirdi mi ?</p>
         <label>
-          <input name="newProje" id="newProje" type="radio" value="evet" />
-          Evet
-          <input name="newProje" id="newProje" type="radio" value="hayır" />
-          Hayır
+          <p>
+            <input name="newProje" id="newProje" type="radio" value="evet" />
+            Evet
+          </p>
+          <p>
+            <input name="newProje" id="newProje" type="radio" value="hayır" />
+            Hayır
+          </p>
         </label>
-        <br />
         {errorsState?.errors?.newProje && (
-          <small className="text-red-500">
-            {errorsState?.errors?.newProje}
-          </small>
+          <p>
+            <small className="text-red-500">
+              {errorsState?.errors?.newProje}
+            </small>
+          </p>
         )}
-      </p>
-      <p>
-        Öğrenci derse zamanında geldi mi ?
+      </div>
+      <div className="box">
+        <p>Öğrenci derse zamanında geldi mi ?</p>
         <label>
-          <input name="zaman" id="zaman" type="radio" value="evet" />
-          Evet
-          <input name="zaman" id="zaman" type="radio" value="hayır" />
-          Hayır
+          <p>
+            <input name="zaman" id="zaman" type="radio" value="evet" />
+            Evet
+          </p>
+          <p>
+            <input name="zaman" id="zaman" type="radio" value="hayır" />
+            Hayır
+          </p>
         </label>
-        <br />
         {errorsState?.errors?.zaman && (
-          <small className="text-red-500">{errorsState?.errors?.zaman}</small>
+          <p>
+            <small className="text-red-500">{errorsState?.errors?.zaman}</small>
+          </p>
         )}
-      </p>
-      <p>
-        Öğrenci ders esnasında sadece derse odaklandı mı ?
+      </div>
+      <div className="box">
+        <p> Öğrenci ders esnasında sadece derse odaklandı mı ?</p>
         <label>
-          <input name="ders" id="ders" type="radio" value="evet" />
-          Evet
-          <input name="ders" id="ders" type="radio" value="hayır" />
-          Hayır
+          <p>
+            <input name="ders" id="ders" type="radio" value="evet" />
+            Evet
+          </p>
+          <p>
+            <input name="ders" id="ders" type="radio" value="hayır" />
+            Hayır
+          </p>
         </label>
-        <br />
         {errorsState?.errors?.ders && (
-          <small className="text-red-500">{errorsState?.errors?.ders}</small>
+          <p>
+            <small className="text-red-500">{errorsState?.errors?.ders}</small>
+          </p>
         )}
-      </p>
-      <p>
-        Öğrenci sertifika almaya hak kazandı mı ?
+      </div>
+      <div className="box">
+        <p>Öğrenci sertifika almaya hak kazandı mı ?</p>
         <label>
-          <input name="sertifika" id="sertifika" type="radio" value="evet" />
-          Evet
-          <input name="sertifika" id="sertifika" type="radio" value="hayır" />
-          Hayır
+          <p>
+            <input name="sertifika" id="sertifika" type="radio" value="evet" />
+            Evet
+          </p>
+          <p>
+            <input name="sertifika" id="sertifika" type="radio" value="hayır" />
+            Hayır
+          </p>
         </label>
-        <br />
         {errorsState?.errors?.sertifika && (
-          <small className="text-red-500">
-            {errorsState?.errors?.sertifika}
-          </small>
+          <p>
+            <small className="text-red-500">
+              {errorsState?.errors?.sertifika}
+            </small>
+          </p>
         )}
-      </p>
+      </div>
 
-      <button type="submit">Kaydet</button>
+      <button className="saveBtn" type="submit">
+        Kaydet
+      </button>
     </div>
   );
 }
